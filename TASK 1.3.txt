@@ -1,0 +1,5 @@
+SearchName = input("Enter the name of the student to display the email address")
+for z in range (Students):
+    if SearchName in String[z]:
+        Search = String[z]
+        print(Search[-(len(SearchName)):])

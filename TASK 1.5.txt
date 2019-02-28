@@ -1,0 +1,8 @@
+Students = int(input("Enter the number of students"))
+MyArray = [[0 for i in range (4)]
+           for j in range(Students)]
+for x in range(Students):
+    Student_Name = input("Enter the name of Student")
+    Email_Address = input("Enter the email address of Student")
+    Date_Of_Birth = input("Enter the Date of Birth of Student")
+    Student_ID = input("Enter the Student ID of the student Student")
