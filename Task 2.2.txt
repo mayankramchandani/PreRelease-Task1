@@ -1,0 +1,8 @@
+File = open("Student Data.txt", "r")
+search = input("Enter the Student ID to be searched for, to get corresponding student Email Address")
+Data = File.read()
+if search == Data[-6:]:
+    print("The Email of the student is" + Data[:-7])
+else :
+    print("Student ID not in records.")
+File.close()

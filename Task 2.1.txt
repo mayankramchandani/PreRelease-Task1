@@ -1,0 +1,22 @@
+def Email_ID_checker():
+    Email = input("Enter the correct, unique email of student " + str(i + 1) + " please")
+    while "@" and ".com" not in Email:
+        Email = input("Enter the correct email of student " + str(i + 1) + " please")
+    Student_ID = input("Enter the unique Student ID of Student " + str(i + 1) + " in the format AB12234 please")
+    try : 
+        while not (Student_ID[:2] >= "A" and Student_ID[:2] <= "Z" and int(Student_ID[2:6])):
+            Student_ID = input("Enter the unique Student ID of Student " + str(i + 1) + " in the format AB12234 please")
+    except : 
+        Student_ID = input("Enter the unique Student ID of Student " + str(i + 1) + " in the format AB12234 please")
+    return(Email , Student_ID)
+
+File = open("Student Dat.txt", "w+" )
+for i in range(Students):
+    Email , StudentID = Email_ID_checker()
+    Check = File.read()
+    if StudentID or Email in Check :
+        print("The Student ID or email address you entered is already present.")
+        Email_ID_checker()
+        String = Email + "#" + StudentID
+    File.write(String + "\n")
+File.close()

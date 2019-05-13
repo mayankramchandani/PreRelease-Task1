@@ -1,0 +1,8 @@
+File = open("Student Data.txt" , "r")
+for x in range(Students):
+    File_Data = File.readline()
+    Search = File_Data[-6:]
+    if 'AB' in Search :
+	    print("The Student ID of the Student is " + Search )
+File.close()
+

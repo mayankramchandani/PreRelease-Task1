@@ -1,0 +1,19 @@
+Students = int(input("Enter the number of students whose data has to be added"))
+File = open("Student_Data.txt" , "w")
+for i in range(Students):
+    Email = input("Enter the proper email of student " + str(i+1) + " please")
+    while "@" and ".com" not in Email :
+        Email = input("Enter the proper email of student " + str(i + 1) + " please")
+    File.writeline(Email)
+    Student_ID = input("Enter the Student ID of Student " + str(i+1) + " please")
+    try : 
+        while not (Student_ID[:2] >= "A" and Student_ID[:2] <= "Z" and int(Student_ID[2:6])):
+            Student_ID = input("Enter the unique Student ID of Student " + str(i + 1) + " in the format AB12234 please")
+    except : 
+        Student_ID = input("Enter the unique Student ID of Student " + str(i + 1) + " in the format AB12234 please")
+    File.writeline(Student_ID)
+    Tutor = input("Enter the tutor details of the Student")
+    File.writeline(Tutor)
+    Home_Address = input ("Enter the home address of the Student")
+    File.writeline(Home_Address)
+File.close()
